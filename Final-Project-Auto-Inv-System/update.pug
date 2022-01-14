@@ -1,0 +1,38 @@
+html(style="text-align: center; background-color: powderblue;")
+
+  body
+    p #{message}
+    h3= 'Vehicle Found'
+    form(method='POST' action='/update')
+      input(type='hidden' id='oldmanu' name='oldmanu' value=oldmanu)
+      input(type='hidden' id='oldmodel' name='oldmodel' value=oldmodel)
+      input(type='hidden' id='oldyear' name='oldyear' value=oldyear)
+      input(type='hidden' id='oldvin' name='oldvin' value=oldvin)
+      input(type='hidden' id='oldpurchase' name='oldpurchase' value=oldpurchase)
+      label(for='manu') Manufacturer:
+      
+      input(type='text', placeholder='Input Manufacturer Name' name='manu' value=manu)
+      br
+      br
+      label(for='model') Model:
+      
+      input(type='text', placeholder='Input Model of Vehicle' name='model' value=model)
+      br
+      br
+      label(for='year') Year:
+      
+      input(type='text', placeholder='Input Year of Vehicle' name='year' value=year)
+      br
+      br
+      label(for='vin') VIN:
+      
+      input(type='text', placeholder='Input Vehicle Identifcation #' name='vin' value=vin)
+      br
+      br
+      label(for='purchase') Purchase Price:
+      
+      input(type='text', placeholder='Input Purchase Price' name='purchase' value=purchase)
+      br
+      br
+      button(type='submit' formaction="/update") Update
+      button(type='submit' formaction="/delete") Delete
